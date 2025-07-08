@@ -15,4 +15,5 @@ Imagine an agent answering viewers' questions in chat about the content of a liv
 ## 🛠️ Tools
 
 - WSL/Docker
+- Drizzle ORM
 - Google Gemini
