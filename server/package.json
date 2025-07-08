@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --env-file .env.development --experimental-strip-types --no-warnings src/server.ts",
-    "dev": "node --env-file .env.development --experimental-strip-types --no-warnings --watch src/server.ts",
+    "start": "node --env-file .env --experimental-strip-types --no-warnings src/server.ts",
+    "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+    "db:seed": "node --env-file .env --experimental-strip-types --no-warnings infra/db/seed.ts",
     "services:up": "docker compose -f infra/compose.yml up -d",
     "services:stop": "docker compose -f infra/compose.yml stop",
     "services:down": "docker compose -f infra/compose.yml down"
