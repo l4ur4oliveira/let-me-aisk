@@ -1,9 +1,16 @@
 @baseUrl = http://localhost:3333
 
+# @name healthCheck
 GET {{baseUrl}}/health
+
 ###
+
+# @name getRooms
 GET {{baseUrl}}/rooms
+
 ###
+
+# @name createRoom
 POST {{baseUrl}}/rooms
 Content-Type: application/json
 
@@ -11,3 +18,12 @@ Content-Type: application/json
   "name": "Room Test",
   "description": "Room test created from Resqt Client extension request."
 }
+
+###
+
+@roomId = {{createRoom.response.body.$.roomId}}
+
+###
+
+# @name getRoomQuestions
+GET {{baseUrl}}/rooms/{{roomId}}/questions
