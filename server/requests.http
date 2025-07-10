@@ -15,7 +15,7 @@ POST {{baseUrl}}/rooms
 Content-Type: application/json
 
 {
-  "name": "Room Test",
+  "name": "Room Test 2",
   "description": "Room test created from Resqt Client extension request."
 }
 
@@ -27,3 +27,13 @@ Content-Type: application/json
 
 # @name getRoomQuestions
 GET {{baseUrl}}/rooms/{{roomId}}/questions
+
+###
+
+# @name createQuestion
+POST {{baseUrl}}/rooms/{{roomId}}/questions
+Content-Type: application/json
+
+{
+  "question": "WTFFF?"
+}
