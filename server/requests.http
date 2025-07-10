@@ -3,3 +3,11 @@
 GET {{baseUrl}}/health
 ###
 GET {{baseUrl}}/rooms
+###
+POST {{baseUrl}}/rooms
+Content-Type: application/json
+
+{
+  "name": "Room Test",
+  "description": "Room test created from Resqt Client extension request."
+}
