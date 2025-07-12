@@ -3,7 +3,7 @@ import type { GetRoomQuestionsResponse } from "./types/get-room-questions-respon
 
 export function useRoomQuestions(roomId: string) {
   return useQuery({
-    queryKey: ['get-quetions', roomId],
+    queryKey: ['get-questions', roomId],
     queryFn: async () => {
       const response = await fetch(`http://localhost:3333/rooms/${roomId}/questions`);
       const result: GetRoomQuestionsResponse = await response.json();
