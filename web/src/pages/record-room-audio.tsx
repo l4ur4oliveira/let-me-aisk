@@ -1,6 +1,14 @@
+import { ArrowLeft, Pause, Play } from 'lucide-react';
 import { useRef, useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 type RoomParams = {
   id: string;
@@ -103,14 +111,34 @@ export function RecordRoomAudio() {
   }
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-3">
-      {isRecording ? (
-        <Button onClick={stopRecording}>Parar gravação</Button>
-      ) : (
-        <Button onClick={startRecording}>Gravar áudio</Button>
-      )}
+    <div className="mx-auto flex w-sm flex-col justify-center gap-3 py-8">
+      <Link to={`/room/${params.id}`}>
+        <Button variant="outline">
+          <ArrowLeft className="mr-2 size-4" />
+          Voltar para a sala
+        </Button>
+      </Link>
+      <Card>
+        <CardHeader>
+          <CardTitle>Gravar áudio</CardTitle>
+          <CardDescription>
+            Clique no botão para começar a gravar.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex items-center gap-3">
+          {isRecording ? (
+            <Button onClick={stopRecording}>
+              <Pause className="size-4" />
+            </Button>
+          ) : (
+            <Button onClick={startRecording}>
+              <Play className="size-4" />
+            </Button>
+          )}
 
-      {isRecording ? <p>Gravando...</p> : <p>Pausado</p>}
+          {isRecording ? <p>Gravando...</p> : <p>Pausado</p>}
+        </CardContent>
+      </Card>
     </div>
   );
 }
