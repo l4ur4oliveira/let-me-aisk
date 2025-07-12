@@ -15,6 +15,13 @@
       "when": 1752167738339,
       "tag": "0001_regular_toad",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752339399923,
+      "tag": "0002_goofy_stark_industries",
+      "breakpoints": true
     }
   ]
 }
